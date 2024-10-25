@@ -6,7 +6,7 @@
 \setlength{\oddsidemargin}{0.5cm}
 \setlength{\textwidth}{17cm}
 \setlength{\topmargin}{-1.5cm}
-\setlength{\textheight}{22cm}   			
+\setlength{\textheight}{22cm}   
 
 \pagestyle{empty}
 
@@ -17,7 +17,7 @@
 
 \vspace{1cm}
 
-\large Shubham  Shashank,   Rupali  Choudhary $\ \large    $\
+\large Shubham Shashank, Rupali Choudhary $\ \large    $\
 
 \vspace{0.5cm}
 
@@ -39,26 +39,19 @@ In this paper, we explore various techniques for the Capsule Vision 2024 Challen
 \section{Methods}\label{sec2}
 We adopted several approaches to tackle the classification problem, which are outlined below:
 
-\begin{figure}[htbp]
-    \centering
-    \vspace{0.5cm}
-    
-    \begin{enumerate}
-        \item two model aproach (one for normal vs diseased classification, other to classify which disease)
-        \item Feature extraction using models like VGG16 and ResNet50, followed by classification using SVM, Random Forest, etc.
-        \item Fine-tuning several CNNs, including ResNet, DenseNet, and YOLO (versions 8-10).
-        \item Fine-tuning multiple Vision Transformers, such as DeiT, DinoV2, and Swin.
-    \end{enumerate}
-    
-    Among these approaches, only the Vision Transformer models demonstrated promising results.
-    \label{fig:approaches}
-\end{figure}
+\begin{enumerate}
+    \item Two model approach (one for normal vs diseased classification, another to classify which disease).
+    \item Feature extraction using models like VGG16 and ResNet50, followed by classification using SVM, Random Forest, etc.
+    \item Fine-tuning several CNNs, including ResNet, DenseNet, and YOLO (versions 8-10).
+    \item Fine-tuning multiple Vision Transformers, such as DeiT, DinoV2, and Swin.
+\end{enumerate}
+
+Among these approaches, only the Vision Transformer models demonstrated promising results.
 
 \section{Results}\label{sec3}
 
-% Participants should compare their results with the provided baseline results.
-\subsection
-\begin
+\subsection{Achieved Results}
+\begin{table}[htbp]
     \centering
     \caption{Achieved results on the validation dataset by final model}
     \begin{tabular}{|l|c|c|c|c|}
@@ -85,12 +78,9 @@ We adopted several approaches to tackle the classification problem, which are ou
         \hline
         Worms & 1.0000 & 0.9714 & 1.0000 & 0.9855 \\ 
         \hline
-        
     \end{tabular}
-    \caption{precision, recall, f1-score are weighted}
+    \caption{Precision, recall, and F1-score are weighted.}
 \end{table}
-
-\label{subsec1}
 
 \section{Discussion}\label{sec4}
 
@@ -98,12 +88,10 @@ The results of our model indicate a promising overall accuracy of 0.9040, reflec
 
 In our exploration of different model architectures, Vision Transformers showed the most promise. Their ability to capture complex patterns may explain their superior performance over traditional CNNs and other classifiers. Fine-tuning these models yielded valuable insights, particularly regarding hyperparameter optimization and the importance of transfer learning.
 
-Even though class imbalance did not put any major obstruction, it is suggested that
-if data had more meaningful annotation of detection or segmentation. Then even CNNs
-can prove to be efficient.
+Even though class imbalance did not pose any major obstruction, it is suggested that if data had more meaningful annotations for detection or segmentation, then even CNNs could prove to be efficient.
 
 \section{Conclusion}\label{sec5}
-If data is improved and annotated for detection and segmentation, than even simple models can be generalized
+If data is improved and annotated for detection and segmentation, then even simple models can be generalized.
 
 \section{Acknowledgments}\label{sec6}
 As participants in the Capsule Vision 2024 Challenge, we fully comply with the competition's rules as outlined in \cite{handa2024capsule}. Our AI model development is based exclusively on the datasets provided in the official release in \cite{Handa2024}.
