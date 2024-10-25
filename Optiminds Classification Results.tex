@@ -1,0 +1,114 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsfonts,latexsym,graphicx}
+\usepackage[numbers]{natbib}
+
+\setlength{\oddsidemargin}{0.5cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-1.5cm}
+\setlength{\textheight}{22cm}   			
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\Large \bf Optiminds Classification Results Submission: Insights and Findings \rm
+
+\vspace{1cm}
+
+\large Shubham  Shashank,   Rupali  Choudhary $\ \large    $\
+
+\vspace{0.5cm}
+
+\normalsize
+
+\vspace{5mm}
+
+Email: {\tt optiminds00@gmail.com}
+
+\vspace{1cm}
+
+\end{center}
+
+\abstract{}
+
+\section{Introduction}\label{sec1}
+In this paper, we explore various techniques for the Capsule Vision 2024 Challenge, focusing on the efficacy of different models in a multiclass classification task.
+
+\section{Methods}\label{sec2}
+We adopted several approaches to tackle the classification problem, which are outlined below:
+
+\begin{figure}[htbp]
+    \centering
+    \vspace{0.5cm}
+    
+    \begin{enumerate}
+        \item two model aproach (one for normal vs diseased classification, other to classify which disease)
+        \item Feature extraction using models like VGG16 and ResNet50, followed by classification using SVM, Random Forest, etc.
+        \item Fine-tuning several CNNs, including ResNet, DenseNet, and YOLO (versions 8-10).
+        \item Fine-tuning multiple Vision Transformers, such as DeiT, DinoV2, and Swin.
+    \end{enumerate}
+    
+    Among these approaches, only the Vision Transformer models demonstrated promising results.
+    \label{fig:approaches}
+\end{figure}
+
+\section{Results}\label{sec3}
+
+% Participants should compare their results with the provided baseline results.
+\subsection
+\begin
+    \centering
+    \caption{Achieved results on the validation dataset by final model}
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{Class} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1 Score} \\ 
+        \hline
+        Angioectasia & 0.7565 & 0.6194 & 0.7565 & 0.6812 \\ 
+        \hline
+        Bleeding & 0.3649 & 0.7081 & 0.3649 & 0.4816 \\ 
+        \hline
+        Erosion & 0.8390 & 0.6022 & 0.8390 & 0.7012 \\ 
+        \hline
+        Erythema & 0.5017 & 0.6564 & 0.5017 & 0.5687 \\ 
+        \hline
+        Foreign Body & 0.8382 & 0.8533 & 0.8382 & 0.8457 \\ 
+        \hline
+        Lymphangiectasia & 0.6968 & 0.8951 & 0.6968 & 0.7836 \\ 
+        \hline
+        Normal & 0.9205 & 0.9545 & 0.9205 & 0.9372 \\ 
+        \hline
+        Polyp & 0.8540 & 0.6135 & 0.8540 & 0.7140 \\ 
+        \hline
+        Ulcer & 0.8706 & 0.8646 & 0.8706 & 0.8676 \\ 
+        \hline
+        Worms & 1.0000 & 0.9714 & 1.0000 & 0.9855 \\ 
+        \hline
+        
+    \end{tabular}
+    \caption{precision, recall, f1-score are weighted}
+\end{table}
+
+\label{subsec1}
+
+\section{Discussion}\label{sec4}
+
+The results of our model indicate a promising overall accuracy of 0.9040, reflecting its effectiveness in distinguishing between various classes. Notably, classes such as Normal and Worms demonstrated high precision and recall, which suggests that the model successfully identified these categories. However, we observed that the classes Bleeding, Polyp, and Erythema were significantly more challenging to classify, with lower accuracy and F1 scores. 
+
+In our exploration of different model architectures, Vision Transformers showed the most promise. Their ability to capture complex patterns may explain their superior performance over traditional CNNs and other classifiers. Fine-tuning these models yielded valuable insights, particularly regarding hyperparameter optimization and the importance of transfer learning.
+
+Even though class imbalance did not put any major obstruction, it is suggested that
+if data had more meaningful annotation of detection or segmentation. Then even CNNs
+can prove to be efficient.
+
+\section{Conclusion}\label{sec5}
+If data is improved and annotated for detection and segmentation, than even simple models can be generalized
+
+\section{Acknowledgments}\label{sec6}
+As participants in the Capsule Vision 2024 Challenge, we fully comply with the competition's rules as outlined in \cite{handa2024capsule}. Our AI model development is based exclusively on the datasets provided in the official release in \cite{Handa2024}.
+
+\bibliographystyle{unsrtnat}
+\bibliography{sample}
+
+\end{document}
